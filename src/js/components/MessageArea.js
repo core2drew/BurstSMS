@@ -27,6 +27,7 @@ class MessageArea extends Component {
         <label>{this.state.text.length} Chars / {this.state.SMS} SMS</label>
         <div>
           <textarea 
+            className="textarea"
             rows={6} 
             name={this.props.name} 
             onChange={this.handleOnChange} 

@@ -13,7 +13,7 @@ class Dropdown extends Component {
 
   render() {
     return (
-      <select onChange={this.handleOnChange}>
+      <select className="select" onChange={this.handleOnChange}>
         {
           this.props.items.map((item, i) => (
             <option value={item.dial_code} key={i}>{item.name}</option>

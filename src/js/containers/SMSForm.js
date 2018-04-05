@@ -98,14 +98,23 @@ class SMSForm extends Component {
 
   render(){
     return(
-      <form onSubmit={this.submitForm}>
-        <Dropdown items={this.props.countryCode} onChange={this.handleChangeCountryCode}/>
-        <div className={this.props.className}>
-          <Input name="recipient" placeholder="Recipient" value={this.state.recipient.value} onChange={this.handlePhoneNoChange}/>
-        </div>
-        <MessageArea maxLength="459" name="message" maxSMS={3} maxCharPerSMS={153} placeholder={"Message"} onChange={this.handleMessageChange}/>
-        <Button type="submit" label="Send"/>
-      </form>
+      <div className="container">
+        <h1>BurstSMS Bitly to SMS Challenge</h1>
+        <form onSubmit={this.submitForm}>
+          <div className="field">
+            <Dropdown items={this.props.countryCode} onChange={this.handleChangeCountryCode}/>
+          </div>
+          <div className="field">
+            <Input name="recipient" placeholder="Recipient" value={this.state.recipient.value} onChange={this.handlePhoneNoChange}/>
+          </div>
+          <div className="field">
+            <MessageArea maxLength="459" name="message" maxSMS={3} maxCharPerSMS={153} placeholder={"Message"} onChange={this.handleMessageChange}/>
+          </div>
+          <div className="control">
+            <Button type="submit" label="Send"/>
+          </div>
+        </form>
+      </div>
     )
   }
 }
